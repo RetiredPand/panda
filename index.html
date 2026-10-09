@@ -1,21 +1,3 @@
-<!--
-Selected Color Palette: Vibrant Corporate Teal & Indigo (Primary Navy #0F172A, Sky Teal #0EA5E9, Indigo Accent #6366F1, Emerald Success #10B981, Coral Orange #F97316, Crimson Warning #EF4444).
-Confirmation: I explicitly confirm that NEITHER Mermaid JS NOR SVG graphics were used anywhere in this output. All icons and diagrams are rendered strictly via structured HTML/CSS with Tailwind or Unicode characters, and all charts are rendered using Canvas via Chart.js.
-
-Narrative Plan & Structure:
-1. Executive Header & Hook: Summary of Deming's philosophy, high-impact KPI summary cards (85/15 Rule, 14 Points, 4 SoPK Pillars, 7 Deadly Diseases).
-2. Section 1 - System of Profound Knowledge (SoPK): Narrative introduction to Deming's core theory, interactive cards for the 4 pillars, accompanied by a Statistical Process Control (Common vs Special Cause) Canvas chart.
-3. Section 2 - Deming's 14 Points Matrix: Narrative introduction, 4 strategic sub-axes housing the 14 points with interactive filtering, accompanied by a Radar Chart comparing Traditional Management vs Deming TQM Model.
-4. Section 3 - Seven Deadly Diseases of Management: Narrative introduction, visual card breakdown of the 7 diseases, paired with a Doughnut Chart displaying organizational risk impact distribution.
-5. Section 4 - Continuous Improvement (PDCA Cycle) & Modern Agility: Narrative introduction, structured HTML/CSS interactive PDCA cycle layout, and modern DevOps/Agile alignment matrix.
-
-Visualization Mapping & Justification:
-- Data Point 1: Systemic Error vs Worker Error (85% System / 15% Worker) -> Goal: Inform/Compare -> Visualization: Donut Chart -> Library: Chart.js (Canvas) -> Reason: Immediate visual clarity on Deming's core thesis. (No SVG)
-- Data Point 2: Statistical Process Control & Variation -> Goal: Change/Trends -> Visualization: Line Chart with Control Limits (UCL, Mean, LCL) -> Library: Chart.js (Canvas) -> Reason: Demonstrates Common vs Special Cause variation effectively. (No SVG)
-- Data Point 3: Traditional Management vs Deming TQM -> Goal: Compare -> Visualization: Radar Chart -> Library: Chart.js (Canvas) -> Reason: Multi-dimensional comparison across 6 management parameters. (No SVG)
-- Data Point 4: Organizational Risk of 7 Deadly Diseases -> Goal: Organize/Composition -> Visualization: Doughnut/Polar Area Chart -> Library: Chart.js (Canvas) -> Reason: Clear categorical breakdown of corporate hazards. (No SVG)
-- Process 1: PDCA (Plan-Do-Check-Act) Cycle -> Goal: Process Flow -> Method: Structured HTML/CSS Cards with CSS Flex/Grid -> Reason: Clear interactive visual representation without prohibited SVG/Mermaid. (No SVG)
--->
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
@@ -25,6 +7,33 @@ Visualization Mapping & Justification:
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css.css">
+    <style id="palette-theme-overrides">
+      :root { color-scheme: light; --palette-sky:#6FB8E6; --palette-navy:#18376E; --palette-gold:#ECB44D; --palette-purple:#6E5890; --palette-pale:#EAF6FD; --palette-border:#B9D8ED; }
+      html, body { background-color:var(--palette-sky) !important; color:var(--palette-navy) !important; }
+      body { font-family:'Cairo',sans-serif; }
+      /* Replace the original dark Tailwind surfaces with light cards. */
+      body[class*="bg-slate-"], header[class*="bg-slate-"], footer[class*="bg-slate-"],
+      [class*="bg-slate-800"], [class*="bg-slate-900"], [class*="bg-slate-950"] {
+        background-color:rgba(255,255,255,.84) !important;
+      }
+      section[class*="bg-gradient"], [class*="bg-gradient-to-br"]:not([class*="bg-clip-text"]) {
+        background-image:linear-gradient(135deg,#EAF6FD 0%,#FFFFFF 60%,#E8E0F1 100%) !important;
+      }
+      [class*="bg-sky-500/"], [class*="bg-indigo-500/"], [class*="bg-orange-500/"], [class*="bg-emerald-500/"] { background-color:rgba(111,184,230,.22) !important; }
+      [class*="text-white"], [class*="text-slate-100"], [class*="text-slate-200"], [class*="text-slate-300"], [class*="text-slate-400"], [class*="text-slate-500"], [class*="text-slate-600"] { color:var(--palette-navy) !important; }
+      [class*="text-sky-"], [class*="text-emerald-"], [class*="text-orange-"], [class*="text-rose-"], [class*="text-indigo-"] { color:var(--palette-purple) !important; }
+      h1, h2, h3, h4 { color:var(--palette-navy) !important; }
+      [class*="border-slate-"], [class*="border-sky-"], [class*="border-indigo-"], [class*="border-emerald-"], [class*="border-orange-"], [class*="border-rose-"] { border-color:var(--palette-border) !important; }
+      [class*="border-r-4"] { border-right-color:var(--palette-gold) !important; }
+      a[class*="bg-sky-500"], a[href="#points14"] { background:var(--palette-gold) !important; color:var(--palette-navy) !important; }
+      [class*="from-sky-"], [class*="via-indigo-"], [class*="to-indigo-"], [class*="to-emerald-"] { --tw-gradient-from:var(--palette-sky) !important; --tw-gradient-to:var(--palette-purple) !important; }
+      [class*="shadow-sky-"] { --tw-shadow-color:rgba(24,55,110,.14) !important; }
+      .chart-container { background:transparent !important; }
+      .custom-scrollbar::-webkit-scrollbar-track { background:#D7EAF7 !important; }
+      .custom-scrollbar::-webkit-scrollbar-thumb { background:var(--palette-purple) !important; border-radius:4px; }
+      ::selection { background:var(--palette-gold); color:var(--palette-navy); }
+    </style>
     <script>
         tailwind.config = {
             theme: {
@@ -36,11 +45,11 @@ Visualization Mapping & Justification:
                         brand: {
                             dark: '#0F172A',
                             card: '#1E293B',
-                            primary: '#0EA5E9',
+                            primary: '#18376E',
                             indigo: '#6366F1',
-                            emerald: '#10B981',
-                            coral: '#F97316',
-                            crimson: '#EF4444',
+                            emerald: '#ECB44D',
+                            coral: '#ECB44D',
+                            crimson: '#6E5890',
                             light: '#F8FAFC'
                         }
                     }
@@ -48,40 +57,8 @@ Visualization Mapping & Justification:
             }
         }
     </script>
-    <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #0F172A;
-            color: #F8FAFC;
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 650px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 320px;
-            max-height: 380px;
-        }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 360px;
-            }
-        }
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #1E293B;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #0EA5E9;
-            border-radius: 4px;
-        }
-    </style>
 </head>
-<body class="bg-slate-900 text-slate-100 antialiased selection:bg-sky-500 selection:text-white">
+<body class="antialiased">
 
     <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -586,8 +563,15 @@ Visualization Mapping & Justification:
             }
         };
 
-        Chart.defaults.color = '#94A3B8';
+        Chart.defaults.color = '#18376E';
+        Chart.defaults.plugins.tooltip.backgroundColor = '#FFFFFF';
+        Chart.defaults.plugins.tooltip.titleColor = '#18376E';
+        Chart.defaults.plugins.tooltip.bodyColor = '#18376E';
+        Chart.defaults.plugins.tooltip.borderColor = '#B9D8ED';
+        Chart.defaults.plugins.tooltip.borderWidth = 1;
         Chart.defaults.font.family = 'Cairo';
+        Chart.defaults.plugins.legend.labels.color = '#18376E';
+        Chart.defaults.scale.grid.color = '#B9D8ED';
 
         const ctx1 = document.getElementById('systemVsWorkerChart').getContext('2d');
         const rawLabels1 = ["أخطاء النظام والعمليات الإدارية", "أخطاء العمال المباشرين"];
@@ -597,7 +581,7 @@ Visualization Mapping & Justification:
                 labels: rawLabels1.map(l => wrapLabel(l, 16)),
                 datasets: [{
                     data: [85, 15],
-                    backgroundColor: ['#0EA5E9', '#EF4444'],
+                    backgroundColor: ['#18376E', '#6E5890'],
                     borderWidth: 0,
                     hoverOffset: 6
                 }]
@@ -625,7 +609,7 @@ Visualization Mapping & Justification:
                     {
                         label: 'حد التحكم الأعلى (UCL)',
                         data: [90, 90, 90, 90, 90, 90, 90, 90, 90, 90],
-                        borderColor: '#EF4444',
+                        borderColor: '#6E5890',
                         borderDash: [5, 5],
                         borderWidth: 2,
                         pointRadius: 0,
@@ -634,21 +618,21 @@ Visualization Mapping & Justification:
                     {
                         label: 'أداء العملية الفعلي',
                         data: [65, 68, 62, 88, 64, 66, 95, 63, 61, 67],
-                        borderColor: '#0EA5E9',
-                        backgroundColor: '#0EA5E9',
+                        borderColor: '#18376E',
+                        backgroundColor: '#18376E',
                         borderWidth: 3,
                         pointRadius: 5,
                         pointBackgroundColor: [
-                            '#0EA5E9','#0EA5E9','#0EA5E9','#0EA5E9','#0EA5E9','#0EA5E9',
-                            '#F97316',
-                            '#0EA5E9','#0EA5E9','#0EA5E9'
+                            '#18376E','#18376E','#18376E','#18376E','#18376E','#18376E',
+                            '#ECB44D',
+                            '#18376E','#18376E','#18376E'
                         ],
                         tension: 0.2
                     },
                     {
                         label: 'المتوسط (Mean)',
                         data: [65, 65, 65, 65, 65, 65, 65, 65, 65, 65],
-                        borderColor: '#10B981',
+                        borderColor: '#ECB44D',
                         borderWidth: 2,
                         pointRadius: 0,
                         fill: false
@@ -656,7 +640,7 @@ Visualization Mapping & Justification:
                     {
                         label: 'حد التحكم الأدنى (LCL)',
                         data: [40, 40, 40, 40, 40, 40, 40, 40, 40, 40],
-                        borderColor: '#EF4444',
+                        borderColor: '#6E5890',
                         borderDash: [5, 5],
                         borderWidth: 2,
                         pointRadius: 0,
@@ -671,10 +655,10 @@ Visualization Mapping & Justification:
                     y: {
                         min: 30,
                         max: 100,
-                        grid: { color: '#334155' }
+                        grid: { color: '#B9D8ED' }
                     },
                     x: {
-                        grid: { color: '#334155' }
+                        grid: { color: '#B9D8ED' }
                     }
                 },
                 plugins: {
@@ -704,18 +688,18 @@ Visualization Mapping & Justification:
                     {
                         label: 'نموذج ديمينج (TQM)',
                         data: [95, 90, 92, 88, 95, 90],
-                        backgroundColor: 'rgba(14, 165, 233, 0.2)',
-                        borderColor: '#0EA5E9',
+                        backgroundColor: 'rgba(111, 184, 230, 0.28)',
+                        borderColor: '#18376E',
                         borderWidth: 2,
-                        pointBackgroundColor: '#0EA5E9'
+                        pointBackgroundColor: '#18376E'
                     },
                     {
                         label: 'الإدارة التقليدية',
                         data: [35, 40, 30, 25, 40, 20],
-                        backgroundColor: 'rgba(239, 68, 68, 0.2)',
-                        borderColor: '#EF4444',
+                        backgroundColor: 'rgba(110, 88, 144, 0.18)',
+                        borderColor: '#6E5890',
                         borderWidth: 2,
-                        pointBackgroundColor: '#EF4444'
+                        pointBackgroundColor: '#6E5890'
                     }
                 ]
             },
@@ -724,8 +708,8 @@ Visualization Mapping & Justification:
                 maintainAspectRatio: false,
                 scales: {
                     r: {
-                        angleLines: { color: '#334155' },
-                        grid: { color: '#334155' },
+                        angleLines: { color: '#B9D8ED' },
+                        grid: { color: '#B9D8ED' },
                         pointLabels: { font: { size: 10 } },
                         ticks: { display: false }
                     }
@@ -757,13 +741,13 @@ Visualization Mapping & Justification:
                 datasets: [{
                     data: [90, 85, 95, 75, 80, 65, 70],
                     backgroundColor: [
-                        'rgba(239, 68, 68, 0.8)',
-                        'rgba(249, 115, 22, 0.8)',
-                        'rgba(236, 72, 153, 0.8)',
-                        'rgba(168, 85, 247, 0.8)',
-                        'rgba(99, 102, 241, 0.8)',
-                        'rgba(14, 165, 233, 0.8)',
-                        'rgba(16, 185, 129, 0.8)'
+                        'rgba(236, 180, 77, 0.85)',
+                        'rgba(110, 88, 144, 0.82)',
+                        'rgba(111, 184, 230, 0.85)',
+                        'rgba(24, 55, 110, 0.78)',
+                        'rgba(110, 88, 144, 0.72)',
+                        'rgba(111, 184, 230, 0.9)',
+                        'rgba(236, 180, 77, 0.72)'
                     ],
                     borderWidth: 0
                 }]
@@ -773,7 +757,7 @@ Visualization Mapping & Justification:
                 maintainAspectRatio: false,
                 scales: {
                     r: {
-                        grid: { color: '#334155' },
+                        grid: { color: '#B9D8ED' },
                         ticks: { display: false }
                     }
                 },
