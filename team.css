@@ -1,0 +1,23 @@
+
+.site-footer{flex-wrap:wrap;border-top:1px solid var(--line);margin-top:25px;padding-top:30px}
+.site-footer .footer-credits{flex:1;text-align:center;min-width:240px}
+.site-footer .footer-credits p{font-size:11px;line-height:1.9;margin:0}
+.footer-credits span{font-weight:600;color:var(--ink)}
+.site-footer>a{font-size:12px}
+header nav{flex-wrap:wrap}
+.filters{direction:rtl}
+.axis-route a:not(:last-child)::after{content:none}
+.team-hero{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:50px;padding:75px 0 50px}
+.team-hero h1{font-size:clamp(56px,7vw,88px)}
+.team-hero h2{font-size:42px;margin-bottom:12px}
+.team-hero p{color:var(--muted);line-height:2;max-width:460px}
+.team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding-bottom:55px}
+.team-card{border-radius:20px;padding:28px 22px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.portrait-frame{width:160px;height:160px;border:2px solid #8b9c70;border-radius:50%;padding:7px;background:#fff8;box-shadow:0 0 0 5px #e8ecdf;overflow:hidden;margin:4px 0 25px}
+.portrait-frame img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;margin:0;background:#e8ecdf}
+.team-card h2{font-size:20px;line-height:1.9;letter-spacing:0;margin:0 0 12px}
+.team-role{display:inline-block;border:1px solid #cbd6bc;background:#eaf0dd;color:#49613c;border-radius:30px;padding:4px 14px;font-size:11px;letter-spacing:.4px;margin:auto 0 0}
+.team-card.leader .portrait-frame{border-color:#9d813f;box-shadow:0 0 0 5px #eee8d8}
+.team-card.leader .team-role{background:#f1ead5;border-color:#ded0a3;color:#765d27}
+@media(max-width:900px){.team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.team-hero{gap:25px}}
+@media(max-width:600px){.team-hero{grid-template-columns:1fr;gap:10px;padding:40px 0 30px}.team-hero h1{margin:18px 0}.team-hero h2{font-size:32px}.team-grid{grid-template-columns:1fr;gap:18px}.team-card{padding:28px 20px}.site-footer .footer-credits{order:4;flex-basis:100%;text-align:left}.site-footer .footer-credits p{width:auto}.site-footer{gap:20px}header nav{gap:12px}}
