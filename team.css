@@ -21,3 +21,12 @@ header nav{flex-wrap:wrap}
 .team-card.leader .team-role{background:#f1ead5;border-color:#ded0a3;color:#765d27}
 @media(max-width:900px){.team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.team-hero{gap:25px}}
 @media(max-width:600px){.team-hero{grid-template-columns:1fr;gap:10px;padding:40px 0 30px}.team-hero h1{margin:18px 0}.team-hero h2{font-size:32px}.team-grid{grid-template-columns:1fr;gap:18px}.team-card{padding:28px 20px}.site-footer .footer-credits{order:4;flex-basis:100%;text-align:left}.site-footer .footer-credits p{width:auto}.site-footer{gap:20px}header nav{gap:12px}}
+
+/* Portrait zoom: mouse hover, touch toggle and keyboard activation. */
+button.portrait-frame{flex-shrink:0;cursor:zoom-in;transition:transform .3s ease,box-shadow .3s ease;touch-action:manipulation}
+button.portrait-frame img{transition:transform .3s ease}
+button.portrait-frame[aria-pressed="true"]{transform:scale(1.15);cursor:zoom-out}
+button.portrait-frame[aria-pressed="true"] img{transform:scale(1.08)}
+button.portrait-frame:focus-visible{outline:3px solid #a58622;outline-offset:7px}
+@media(hover:hover) and (pointer:fine){button.portrait-frame:hover{transform:scale(1.15)}button.portrait-frame:hover img{transform:scale(1.08)}}
+@media(prefers-reduced-motion:reduce){button.portrait-frame,button.portrait-frame img{transition:none}}
