@@ -36,3 +36,10 @@ button.portrait-frame:focus-visible{outline:3px solid #a58622;outline-offset:7px
 .creators-heading h2{font-size:30px;margin-bottom:0}
 .creators-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:790px;margin-inline:auto}
 @media(max-width:600px){.creators-grid{grid-template-columns:1fr}.team-divider{margin:0 0 30px}}
+
+/* Gold accents for the design and development team. */
+.creators-grid .team-card{background:linear-gradient(135deg,rgba(255,250,229,.85),rgba(239,220,161,.55));border-color:#d6b85b;box-shadow:0 8px 30px #9b742318,inset 0 1px 0 #fff9}
+.creators-grid .team-card h2{color:#856018}
+.creators-grid .portrait-frame{border-color:#bb9134;box-shadow:0 0 0 5px #efe2b8;background:#fff8df}
+.creators-grid .team-role{background:#f2e4b5;border-color:#d2b057;color:#795714}
+.footer-credits strong{font-weight:700;color:var(--ink)}
