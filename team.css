@@ -30,3 +30,9 @@ button.portrait-frame[aria-pressed="true"] img{transform:scale(1.08)}
 button.portrait-frame:focus-visible{outline:3px solid #a58622;outline-offset:7px}
 @media(hover:hover) and (pointer:fine){button.portrait-frame:hover{transform:scale(1.15)}button.portrait-frame:hover img{transform:scale(1.08)}}
 @media(prefers-reduced-motion:reduce){button.portrait-frame,button.portrait-frame img{transition:none}}
+
+.team-divider{border:0;border-top:1px solid #a8b596;margin:5px 0 40px}
+.creators-heading{text-align:center;margin-bottom:30px}
+.creators-heading h2{font-size:30px;margin-bottom:0}
+.creators-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:790px;margin-inline:auto}
+@media(max-width:600px){.creators-grid{grid-template-columns:1fr}.team-divider{margin:0 0 30px}}
