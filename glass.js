@@ -1,4 +1,12 @@
 (() => {
+const siteHeader=document.querySelector('body>header');
+if(siteHeader){
+  const measureHeader=()=>document.documentElement.style.setProperty('--site-header-height',Math.ceil(siteHeader.getBoundingClientRect().height)+'px');
+  measureHeader();
+  if('ResizeObserver' in window)new ResizeObserver(measureHeader).observe(siteHeader);
+  else window.addEventListener('resize',measureHeader);
+}
+
 const axisSections=[...document.querySelectorAll('.axis-section')];
 document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{axisSections.forEach(section=>section.hidden=button.dataset.filter!=='All'&&section.dataset.axis!==button.dataset.filter)}));
 const mapText=document.querySelector('.map-insight');
