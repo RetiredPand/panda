@@ -22,7 +22,7 @@ header nav{flex-wrap:wrap}
 .team-card.leader{background:linear-gradient(135deg,rgba(255,250,229,.85),rgba(239,220,161,.55));border-color:#d6b85b;box-shadow:0 8px 30px #9b742318,inset 0 1px 0 #fff9}
 .team-card.leader h2{color:#856018}
 .team-card.leader .portrait-frame{border-color:#bb9134;box-shadow:0 0 0 5px #efe2b8;background:#fff8df}
-.team-card.leader .team-role{background:#f2e4b5;border-color:#d2b057;color:#795714}
+.team-card.leader .team-role{background:#f2e4b5;border-color:#d2b057;color:#795714} 
 @media(max-width:900px){.team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.team-hero{gap:25px}}
 @media(max-width:600px){.team-hero{grid-template-columns:1fr;gap:10px;padding:40px 0 30px}.team-hero h1{margin:18px 0}.team-hero h2{font-size:32px}.team-grid{grid-template-columns:1fr;gap:18px}.team-card{padding:28px 20px}.site-footer .footer-credits{order:4;flex-basis:100%;text-align:left}.site-footer .footer-credits p{width:auto}.site-footer{gap:20px}header nav{gap:12px}}
 
