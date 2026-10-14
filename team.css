@@ -282,7 +282,7 @@ button.portrait-frame:focus-visible {
 
 /* Gold accents for the design and development team. */
 .creators-grid .team-card {
-    background: linear-gradient(135deg, rgba(177, 144, 13, 0.85), rgba(239, 220, 161, .55));
+    background: linear-gradient(135deg, rgba(255, 250, 229, .85), rgba(239, 220, 161, .55));
     border-color: #d6b85b;
     box-shadow: 0 8px 30px #9b742318, inset 0 1px 0 #fff9
 }
